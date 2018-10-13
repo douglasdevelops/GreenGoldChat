@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity() {
             val username = usernameRegisterScrn.text.toString()
             val email = emailRegisterScrn.text.toString()
             val password = passwordRegisterScrn.text.toString()
+
+            // Firebase Authentication
+
+
         }
         loginTextViewRegister.setOnClickListener {
             // Launch the login activity screen
