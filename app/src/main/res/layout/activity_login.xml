@@ -1,15 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light">
+
+    <EditText
+        android:id="@+id/emailLoginScrn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/passwordLoginScrn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/emailLoginScrn"
+        app:layout_constraintStart_toStartOf="@+id/emailLoginScrn"
+        app:layout_constraintTop_toBottomOf="@+id/emailLoginScrn" />
+
+    <Button
+        android:id="@+id/loginBtnScrn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="LOGIN"
+        app:layout_constraintEnd_toEndOf="@+id/passwordLoginScrn"
+        app:layout_constraintStart_toStartOf="@+id/passwordLoginScrn"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLoginScrn" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/registerTextViewScrn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HELLO TESTING VIEW"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="233dp" />
+        android:layout_marginTop="8dp"
+        android:text="Back to registration"
+        app:layout_constraintEnd_toEndOf="@+id/loginBtnScrn"
+        app:layout_constraintStart_toStartOf="@+id/loginBtnScrn"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtnScrn" />
 </android.support.constraint.ConstraintLayout>
