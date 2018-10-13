@@ -15,29 +15,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonRegister.setOnClickListener {
-            val username = usernameRegisterScrn.text.toString()
-            val email = emailRegisterScrn.text.toString()
-            val password = passwordRegisterScrn.text.toString()
-
-            if(email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter text in email/password", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            // Firebase Authentication
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener{
-                        if (!it.isSuccessful) return@addOnCompleteListener
-
-                        // else if successful
-                        Log.d("Main", "Successfully created user with uid: ${it.result?.user?.uid}")
-                    }
-
+            performRegister()
         }
         loginTextViewRegister.setOnClickListener {
             // Launch the login activity screen
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
      }
+    }
+
+    private fun performRegister(){
+        val username = usernameRegisterScrn.text.toString()
+        val email = emailRegisterScrn.text.toString()
+        val password = passwordRegisterScrn.text.toString()
+
+        if(email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please enter text in email/password", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Firebase Authentication
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener{
+                    if (!it.isSuccessful) return@addOnCompleteListener
+
+                    // else if successful
+                    Log.d("Main", "Successfully created user with uid: ${it.result?.user?.uid}")
+                }
     }
 }
