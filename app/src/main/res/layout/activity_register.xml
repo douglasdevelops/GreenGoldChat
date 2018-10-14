@@ -83,4 +83,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selectPhotoRegisterView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRegisterBtn"
+        app:layout_constraintEnd_toEndOf="@+id/imgRegisterBtn"
+        app:layout_constraintStart_toStartOf="@+id/imgRegisterBtn"
+        app:layout_constraintTop_toTopOf="@+id/imgRegisterBtn" />
 </android.support.constraint.ConstraintLayout>
